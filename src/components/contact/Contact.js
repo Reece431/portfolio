@@ -1,0 +1,68 @@
+import React,{useRef, useState, useContext} from 'react';
+import emailjs from 'emailjs-com';
+
+import './contact.css';
+import { ModeContext } from '../../context';
+
+const Contact = () => {
+
+    const mode = useContext(ModeContext);
+    const darkMode = mode.state.darkMode;
+
+    const formRef = useRef();
+    const [sent, setSent] = useState(false);
+    const [err, setErr] = useState(false);
+
+    const submitMe = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_drk5ntn','template_it8h1qb',formRef.current,'user_UAr6qFnxZmI1MF0e2d9h6')
+      .then((result) => {
+        //   console.log(result.text);
+        //   reset input
+          formRef.current[0].value="";
+          formRef.current[1].value="";
+          formRef.current[2].value="";
+          setSent(true)
+      }, (error) => {
+        //   console.log(error.text);
+        setErr(true)
+      });
+    };
+
+    return (
+        <div className="c">
+            <div className="c-bg"></div>
+                <div className="c-wrapper">
+                    <div className="c-left">
+                        <h1 className="c-title">Get in touch</h1>
+                        <div className="c-info">
+                            <div className="c-info-item">
+                                <i class="fas fa-phone-square-alt c-icon"></i>
+                                +77801953015
+                            </div>
+                            <div className="c-info-item">
+                                <i class="fas fa-envelope-open-text c-icon"></i>
+                                Farnworthwork@gmail.com
+                            </div>
+                            {sent && <p className="c-sent" style={{color: '#61AB7A'}}>Thanks, I'll get back to you shortly</p>}
+                            {err &&  <p className="c-sent" style={{color: '#E44434'}}>Unable to sent, please try again soon</p>}
+                        </div>
+                    </div>
+                    <div className="c-right">
+                        <p className="c-desc">
+                            <strong>I'd love to hear from you.</strong> If you'd like a copy of my CV, have a question about one of my projects or simply want to chat about some code, please use the form below.
+                        </p>
+                        <form ref={formRef} onSubmit={(e) => submitMe(e)}>
+                            <input type="text" placeholder="Name" name="name" style={{background: darkMode ? '#333' : '#fff'}}/>
+                            <input type="text" placeholder="Email" name="email" style={{background: darkMode ? '#333' : '#fff'}}/>
+                            <textarea rows="5" placeholder="Message" name="msg" style={{background: darkMode ? '#333' : '#fff'}}/>
+                            <button>Submit</button>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    )
+}
+
+export default Contact
