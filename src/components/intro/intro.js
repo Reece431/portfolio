@@ -13,7 +13,7 @@ const intro = () => {
                         <div className="i-title" tabIndex="0" aria-label="list-of-personal-titles-5-items">
                             <div className="i-title-wrapper">
                                 <div className="i-title-item" tabIndex="0">Web Developer</div>
-                                <div className="i-title-item" tabIndex="0">React enthusiastic</div>
+                                <div className="i-title-item" tabIndex="0">React enthusiast</div>
                                 <div className="i-title-item" tabIndex="0">Content Creator</div>
                                 <div className="i-title-item" tabIndex="0">Amateur Pickler</div>
                                 <div className="i-title-item" tabIndex="0">Human Being</div>

@@ -1,28 +1,21 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import { ModeContext } from '../../context';
 
 import './toggle.css'
 
 const Toggle = () => {
 
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            console.log(document.body.scrollTop);
-        })
-    })
-
     const mode = useContext(ModeContext);
     const darkMode = mode.state.darkMode;
     const Clicked = () => {
         mode.dispatch({type: "TOGGLE"})
-        console.log(darkMode)
     };
 
     return (
-        <div className="t">
+        <div className="t" tabIndex="0" aria-label={darkMode ? 'light-mode' : 'dark-mode'}>
             <i className="fas fa-sun t-icon"></i>
             <i className="fas fa-moon t-icon"></i>
-            <div className="t-button" onClick={() => Clicked()} style={{left: darkMode ? 0 : '25px'}}></div>
+            <div className="t-button" onClick={() => Clicked()} style={{left: darkMode ? 0 : '25px'}} tabIndex="0" role="button"></div>
         </div>
     )
 }

@@ -94,3 +94,14 @@
         margin-left: 15%;
     }
 }
+
+@media screen and (max-width: 415px){
+    .i-img{
+        width: 80%;
+        left: 40%;
+        margin: 0 0 0 -90px;
+    }
+    .i-bg{
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0% 50%);
+    }
+}
