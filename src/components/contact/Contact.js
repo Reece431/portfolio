@@ -33,31 +33,31 @@ const Contact = () => {
     return (
         <div className="c">
             <div className="c-bg"></div>
-                <div className="c-wrapper">
-                    <div className="c-left">
-                        <h1 className="c-title">Get in touch</h1>
-                        <div className="c-info">
+                <div className="c-wrapper" tabIndex="0" aria-label="contact-section" role="region">
+                    <div className="c-left" tabIndex="-1">
+                        <h1 className="c-title" tabIndex="0">Get in touch</h1>
+                        <div className="c-info" tabIndex="0" aria-label="contact-information">
                             <div className="c-info-item">
-                                <i class="fas fa-phone-square-alt c-icon"></i>
-                                +77801953015
+                                <i class="fas fa-phone-square-alt c-icon" tabIndex="0" aria-label="number"></i>
+                                <p tabIndex="0">+77801953015</p>
                             </div>
                             <div className="c-info-item">
-                                <i class="fas fa-envelope-open-text c-icon"></i>
-                                Farnworthwork@gmail.com
+                                <i class="fas fa-envelope-open-text c-icon" tabIndex="0" aria-label="email"></i>
+                                <p tabIndex="0">Farnworthwork@gmail.com</p>
                             </div>
-                            {sent && <p className="c-sent" style={{color: '#61AB7A'}}>Thanks, I'll get back to you shortly</p>}
-                            {err &&  <p className="c-sent" style={{color: '#E44434'}}>Unable to sent, please try again soon</p>}
+                            {sent && <p className="c-sent" style={{color: '#61AB7A'}} role="alert">Thanks, I'll get back to you shortly</p>}
+                            {err &&  <p className="c-sent" style={{color: '#E44434'}} role="alert">Unable to sent, please try again soon</p>}
                         </div>
                     </div>
-                    <div className="c-right">
-                        <p className="c-desc">
+                    <div className="c-right" tabIndex="-1">
+                        <p className="c-desc" tabIndex="0">
                             <strong>I'd love to hear from you.</strong> If you'd like a copy of my CV, have a question about one of my projects or simply want to chat about some code, please use the form below.
                         </p>
-                        <form ref={formRef} onSubmit={(e) => submitMe(e)}>
-                            <input type="text" placeholder="Name" name="name" style={{background: darkMode ? '#333' : '#fff'}}/>
-                            <input type="text" placeholder="Email" name="email" style={{background: darkMode ? '#333' : '#fff'}}/>
-                            <textarea rows="5" placeholder="Message" name="msg" style={{background: darkMode ? '#333' : '#fff'}}/>
-                            <button>Submit</button>
+                        <form ref={formRef} onSubmit={(e) => submitMe(e)} tabIndex="0" role="form" aria-label="contact-form">
+                            <input type="text" placeholder="Name" name="name" style={{background: darkMode ? '#333' : '#fff'}} required aria-required="true"/>
+                            <input type="text" placeholder="Email" name="email" style={{background: darkMode ? '#333' : '#fff'}} required aria-required="true"/>
+                            <textarea rows="5" placeholder="Message" name="msg" style={{background: darkMode ? '#333' : '#fff'}} required aria-required="true"/>
+                            <button tabIndex="0">Submit</button>
                         </form>
                     </div>
                 </div>

@@ -16,19 +16,23 @@ const ProjectList = () => {
     }
 
     return (
-        <div className="pl">
+        <div className="pl" tabIndex="0" aria-label="project-section" role="region">
             <div className="pl-texts">
-                <h1 className="pl-title">Projects</h1>
-                <p className="pl-desc">
+                <h1 className="pl-title" tabIndex="0">Projects</h1>
+                <p className="pl-desc" tabIndex="0">
                     This is a showcase of my most recent work in a variety of styles, the cards below are projects I've built in my spare time to help me evolve as a developer or you can check out some of my professional work here:
                     <a href="https://github.com/Reece431" target="_blank" style={{
                             color: darkMode ? '#fff' : '#222',
-                            borderColor: darkMode ? '#fff' : '#222'}}>
+                            borderColor: darkMode ? '#fff' : '#222'}}
+                            tabIndex="0"
+                            aria-label="link-to-my-github"
+                    >
+
                         <i class="fab fa-github-alt pl-git"></i>
                     </a>
                 </p>
             </div>
-            <div className="pl-list">
+            <div className="pl-list" tabIndex="0" aria-label={`list of projects ${sites.length} items`}>
                 {spawnProjects()}
             </div>
         </div>
