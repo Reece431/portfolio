@@ -39,7 +39,7 @@ const Contact = () => {
                         <div className="c-info" tabIndex="0" aria-label="contact-information">
                             <div className="c-info-item">
                                 <i class="fas fa-phone-square-alt c-icon" tabIndex="0" aria-label="number"></i>
-                                <p tabIndex="0">+77801953015</p>
+                                <p tabIndex="0">07801953015</p>
                             </div>
                             <div className="c-info-item">
                                 <i class="fas fa-envelope-open-text c-icon" tabIndex="0" aria-label="email"></i>

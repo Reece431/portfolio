@@ -20,7 +20,7 @@ const intro = () => {
                             </div>
                         </div>
                         <div className="i-desc" tabIndex="0">
-                            A self taught web developer with an ever-hungry appetite for learning new skills while continuing to grow my existing catalogue.
+                            Working to leave my mark on the web, one site at a time.
                         </div>
                     </div>
                 </div>

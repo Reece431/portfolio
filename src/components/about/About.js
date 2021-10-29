@@ -20,7 +20,7 @@ const About = () => {
                 <h1 className="a-title" tabIndex="0">About Me</h1>
                 <p className="a-sub" tabIndex="0">I like to build things for the web.</p>
                 <p className="a-desc" tabIndex="0">
-                    Hi, I'm Reece a self taught web developer with ever-hungry appetite for learning new skills while continuing to grow my existing catalogue.
+                    A self taught web developer, striving to create an ever growing skill set engineered through personal and professional challenges, fueled by my boundless passion for web development.
                 </p>
                 <p className="a-sub">
                     Skill set:
