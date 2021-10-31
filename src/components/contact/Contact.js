@@ -45,8 +45,8 @@ const Contact = () => {
                                 <i class="fas fa-envelope-open-text c-icon" tabIndex="0" aria-label="email"></i>
                                 <p tabIndex="0">Farnworthwork@gmail.com</p>
                             </div>
-                            {sent && <p className="c-sent" style={{color: '#61AB7A'}} role="alert">Thanks, I'll get back to you shortly</p>}
-                            {err &&  <p className="c-sent" style={{color: '#E44434'}} role="alert">Unable to sent, please try again soon</p>}
+                            {sent && <p className="c-sent" style={{color: '#61AB7A'}} role="alert" tabIndex="0" aria-live="polite">Thanks, I'll get back to you shortly</p>}
+                            {err &&  <p className="c-sent" style={{color: '#E44434'}} role="alert" tabIndex="0" aria-live="polite">Unable to sent, please try again soon</p>}
                         </div>
                     </div>
                     <div className="c-right" tabIndex="-1">
